@@ -1,2 +1,2 @@
-CREATE DATABADE employees
+CREATE DATABASE employees
 use employees
