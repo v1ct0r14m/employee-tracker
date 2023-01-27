@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/v1ct0r14m/employee-tracker#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "inquirer": "^9.1.4"
   }
 }

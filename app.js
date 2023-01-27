@@ -36,8 +36,8 @@ const departments = () => {
             name: 'addDepartment',
             type: 'input',
             message: 'what is your new department called?',
-            when ({ chooseDepartmentMode }) => {
-                const option = departmentOption.split(/[()]+/)
+            when: ({ chooseDepartmentMode }) => {
+                const option = chooseDepartmentMode.split(/[()]+/)
                 if (option[1] === '2') {
                     return true 
                 }
@@ -47,15 +47,18 @@ const departments = () => {
             name: 'deleteDepartment',
             type: 'rawlist',
             message: 'choose a department you would like to delete?',
-            when ({ chooseDepartmentMode }) => {
-                const option = departmentOption.split(/[()]+/)
+            when: ({ chooseDepartmentMode }) => {
+                const option = chooseDepartmentMode.split(/[()]+/)
                 if (option[1] === '2') {
-                    
+                    return true
                 }
             }
         }
     ]).then(answer => {
         const optionNum = answer.chooseDepartmentMode.split(/[()]+/)[1]
-        department
+        departmentHandler(optionNum, answer)
+            .then(() => {
+                question()
+            })
     })
 }

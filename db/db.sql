@@ -1,0 +1,2 @@
+CREATE DATABADE employees
+use employees
