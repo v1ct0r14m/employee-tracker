@@ -54,5 +54,8 @@ const departments = () => {
                 }
             }
         }
-    ])
+    ]).then(answer => {
+        const optionNum = answer.chooseDepartmentMode.split(/[()]+/)[1]
+        department
+    })
 }
